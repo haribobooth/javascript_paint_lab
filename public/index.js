@@ -106,6 +106,13 @@ var app = function(){
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
   };
 
+  var downloadButton = document.getElementById('download-button');
+  downloadButton.onclick = function(){
+    var dataURL = canvas.toDataURL('image/png');
+    downloadButton.href = dataURL;
+  };
+
+
 };
 
 window.onload = app;
