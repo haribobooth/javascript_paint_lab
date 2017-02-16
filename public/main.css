@@ -12,9 +12,10 @@ canvas {
 }
 
 #sidebar {
+  font-family: sans-serif;;
   display: inline-block;
   background-color: grey;
-  height: 664px;
+  height: 663px;
   max-width: 130px;
   padding: 10px;
   vertical-align: top;
