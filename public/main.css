@@ -15,6 +15,7 @@ canvas {
   display: inline-block;
   background-color: grey;
   height: 665px;
+  max-width: 131px;
   padding: 10px;
   vertical-align: top;
 }

@@ -44,7 +44,7 @@ var app = function(){
 
   canvas.onmousedown = function(event){
     var sizeInput = document.querySelector('#size-input');
-    drawCircle(event.x, event.y, sizeInput.value);
+    // drawCircle(event.x, event.y, sizeInput.value);
     mouseDown = true;
   };
 
@@ -66,13 +66,13 @@ var app = function(){
 
   var colorPicker = document.querySelector('#color-input');
   colorPicker.onchange = changeColor;
-
-  canvas.onclick = function(event){
-    var x = event.x;
-    var y = event.y;
-
-    drawCircle(x, y);
-  };
+  //
+  // canvas.onclick = function(event){
+  //   var x = event.x;
+  //   var y = event.y;
+  //
+  //   drawCircle(x, y);
+  // };
 
   // var img = document.createElement('img');
   // img.src = "http://emojis.slackmojis.com/emojis/images/1457563042/312/doge.png";
@@ -83,6 +83,28 @@ var app = function(){
   // img.onload = function(){
   //   canvas.onclick = drawDoge;
   // };
+
+  var urlInput = document.querySelector('#url-input');
+
+  var img = document.createElement('img');
+
+  urlInput.onchange = function(){
+    img.id = 'sticker';
+    img.src = this.value;
+    console.log(this.value);
+  };
+
+  canvas.oncontextmenu = function(event){
+    mouseDown = false;
+    var sizeInput = document.querySelector('#size-input');
+    context.drawImage(img, event.x - sizeInput.value, event.y - sizeInput.value, 2*sizeInput.value, 2*sizeInput.value);
+    return false;
+  };
+
+  var clearButton = document.querySelector('#clear-button');
+  clearButton.onclick = function(event){
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+  };
 
 };
 
