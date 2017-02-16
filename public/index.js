@@ -112,7 +112,10 @@ var app = function(){
     downloadButton.href = dataURL;
   };
 
-
+  var steveButton = document.querySelector('#classic-steve');
+  steveButton.onclick = function(){
+    img.src = "https://scontent.xx.fbcdn.net/v/t1.0-9/10933712_1084239348271414_7259522291350491604_n.jpg?oh=fda04bdf833aa34924fb575fd4357ba7&oe=593389AA";
+  };
 };
 
 window.onload = app;
